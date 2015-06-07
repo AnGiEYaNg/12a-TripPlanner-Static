@@ -15,20 +15,20 @@ var placeSchema = new mongoose.Schema({
 
 var hotelSchema = new mongoose.Schema({
   name:  	 String, 
-  place: 	 String,
+  place: 	 [placeSchema],
   num_stars: {type: Number, min: 1, max: 5},
   amenities: {type: String} //comma delimited string list
 });
 
 var thingToDoSchema = new mongoose.Schema({
     name: String,
-    place: String,
+    place: [placeSchema],
     age_range: String
 })
 
 var restaurantSchema = new mongoose.Schema({
     name: String,
-    place: String,
+    place: [placeSchema],
     cuisine: String,
     price: {type:Number, min: 1, max: 5}
 })
